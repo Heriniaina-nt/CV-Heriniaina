@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heriniaina | CV</title>
+    <link rel="stylesheet" href="ggf.css">
+</head>
+<body>
+    <style>:root {
+    --primary-color: #ff7f50; /* Couleur style (corail) */
+    --accent-color: #3498db;
+    --text-color: #333;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow-x: hidden;
+    color: var(--text-color);
+}
+
+/* Fond animé dégradé */
+.animated-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.cv-container {
+    background: rgba(255, 255, 255, 0.92);
+    width: 90%;
+    max-width: 900px;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    animation: slideUp 1s ease-out;
+}
+
+/* Header & Photo */
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.photo-container {
+    position: relative;
+    display: inline-block;
+}
+
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 5px solid white;
+    object-fit: cover;
+    animation: pulse 2s infinite alternate;
+}
+
+.style-dot {
+    position: absolute;
+    top: 10px;
+    right: -10px;
+    width: 40px;
+    height: 40px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    z-index: -1;
+}
+
+h1 { margin: 15px 0 5px; font-size: 2.5em; text-transform: uppercase; }
+.profession { font-size: 1.2em; color: #666; font-weight: 300; }
+
+/* Mise en page colonnes */
+.main-content {
+    display: flex;
+    gap: 30px;
+}
+
+.left-col, .right-col { flex: 1; }
+
+.vertical-line {
+    width: 2px;
+    background: #ddd;
+    align-self: stretch;
+}
+
+/* Sections & Textes */
+h2 {
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 5px;
+    font-size: 1.3em;
+    margin-top: 30px;
+}
+
+ul { list-style: none; padding: 0; }
+li { margin-bottom: 12px; transition: transform 0.3s; }
+li:hover { transform: translateX(10px); color: var(--primary-color); }
+
+/* Barres de progression */
+.skill-item { margin-bottom: 15px; }
+.progress-bar {
+    background: #eee;
+    height: 10px;
+    border-radius: 10px;
+    margin-top: 5px;
+    overflow: hidden;
+}
+
+.progress {
+    height: 100%;
+    background: var(--primary-color);
+    border-radius: 10px;
+    width: 0; /* Animé via keyframes ou inline width */
+    animation: loadProgress 2s ease-out forwards;
+}
+
+.progress.blue { background: var(--accent-color); }
+
+/* Animations */
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+    from { transform: scale(1); box-shadow: 0 0 0 rgba(0,0,0,0); }
+    to { transform: scale(1.05); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+}
+
+@keyframes loadProgress {
+    from { width: 0; }
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+    .main-content { flex-direction: column; }
+    .vertical-line { display: none; }
+}
+</style>
+    <!-- Fond animé -->
+    <div class="animated-bg"></div>
+
+    <div class="cv-container">
+        <!-- En-tête -->
+        <header>
+            <div class="photo-container">
+                <img src="Nacho.jpg" alt="Ma Photo" class="profile-pic">
+                <div class="style-dot"></div>
+            </div>
+            <h1>Heriniaina RAZAFIMANANTSOA</h1>
+            <p class="profession">Étudiant L1 DAII de l'EMIT</p>
+        </header>
+
+        <div class="main-content">
+            <!-- Colonne Gauche -->
+            <aside class="left-col">
+                <section>
+                    <h2>Profil 👤</h2>
+                    <ul class="info-list">
+                        <li><strong>📞 Contact :</strong> +261 33 81 696 01</li>
+                        <li><strong>📍 Adresse :</strong> Tanambao-Fianarantsoa</li>
+                        <li><strong>🎂 Né le :</strong> 29/07/2007 à Ambovombe-Androy</li>
+                        <li><strong>📧 Email :</strong> el.natcho17@gmail.com</li>
+                        <li><strong>👨 Père :</strong> RAZAFIMANANTSOA Heritiana</li>
+                        <li><strong>👩 Mère :</strong> RAZAFINIRISOA Georgiane</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Langues 🗣️</h2>
+                    <div class="skill-item">
+                        <span>Malagasy</span>
+                        <div class="progress-bar"><div class="progress" style="width: 85%;"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <span>Français</span>
+                        <div class="progress-bar"><div class="progress" style="width: 45%;"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <span>Anglais</span>
+                        <div class="progress-bar"><div class="progress" style="width: 39%;"></div></div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Sports & Loisirs 🎨</h2>
+                    <ul class="hobby-list">
+                        <li>⚽ Football</li>
+                        <li>📚 Lecture</li>
+                        <li>📺 Regarder la télé</li>
+                    </ul>
+                </section>
+            </aside>
+
+            <!-- Ligne de séparation -->
+            <div class="vertical-line"></div>
+
+            <!-- Colonne Droite -->
+            <main class="right-col">
+                <section>
+                    <h2>Diplômes Obtenus 🎓</h2>
+                    <div class="edu-item">
+                        <h3>2024-2025 : Baccalauréat Scientifique</h3>
+                        <p>Lycée Privé Sacré-Cœur, Ambovombe-Androy</p>
+                    </div>
+                    <div class="edu-item">
+                        <h3>2021-2022 : BEPC</h3>
+                        <p>Sacré-Cœur, Ambovombe-Androy</p>
+                    </div>
+                    <div class="edu-item">
+                        <h3>2017-2018 : CEPE</h3>
+                        <p>Sacré-Cœur, Ambovombe-Androy</p>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Compétences 🛠️</h2>
+                    <div class="skill-item">
+                        <span>Informatique</span>
+                        <div class="progress-bar"><div class="progress blue" style="width: 59%;"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <span>Recherche</span>
+                        <div class="progress-bar"><div class="progress blue" style="width: 68%;"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <span>Leadership</span>
+                        <div class="progress-bar"><div class="progress blue" style="width: 71%;"></div></div>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+</body>
+</html>
